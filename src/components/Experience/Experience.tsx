@@ -22,11 +22,9 @@ const Experience = () => {
         end: "2023",
         company: "Patch Infotech Pvt. Ltd., Gurugram, Haryana",
         responsibilities:[
-            "Designed and implemented high-performance web applications, integrating third-party libraries and software solutions to enhance functionality and user experience.",
             "Led the development of a multi-license business administration web application using Angular 13, TypeScript, Material UI, Tailwind CSS, and NPM, ensuring scalable and maintainable code.",
             "Built and optimized reusable UI components, reducing maintenance efforts and accelerating development cycles.",
             "Conducted unit testing with Jasmine and Karma, ensuring robust and error-free application deployment.",
-            "Collaborated in Agile/Scrum environments, actively participating in sprint planning, task estimation, and cross-functional discussions to enhance project efficiency.",
             "Mentored and led a team of five developers, fostering skill development and career growth in a competitive environment.",
             "Developed and maintained a business administrator tool leveraging C# (.NET) and KnockoutJS, improving operational workflows.",
             "Strong cross-functional collaboration, effectively communicating with stakeholders, UX/UI designers, and backend teams to align development goals and deliver high-quality products on time.",

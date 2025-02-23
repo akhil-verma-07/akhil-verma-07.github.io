@@ -1,19 +1,21 @@
 
-import { Container, Tab, Tabs } from '@mui/material'
+// import { Container, Tab, Tabs } from '@mui/material'
 import './App.scss'
-import { useState } from 'react'
+// import { useState } from 'react'
 // import Router from './components/Router/Router'
 import Profile from './components/common/Profile/Profile'
 import About from './components/About/About'
 import Skills from './components/Skills/Skills'
 import Experience from './components/Experience/Experience'
 import GetInTouch from './components/GetInTouch/GetInTouch'
+import SEO from './components/SEO'
 
 function App() {
-  const [tab,setTab] = useState()
+  // const [tab,setTab] = useState()
   return (
     <>
-      <header id="header" className='header'>
+    <SEO/>
+      {/* <header id="header" className='header'>
         <Container className='flex flex-row j-between align-center'>
           <h2>Akhil Verma</h2>
           <div>
@@ -29,7 +31,7 @@ function App() {
           </div>
         </Container>
 
-      </header>
+      </header> */}
       <main>
         <Profile/>
         <About/>

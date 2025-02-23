@@ -28,6 +28,7 @@ a:hover {
 
 body {
   margin: 0;
+  background: #e3edf7;
   /* display: flex; */
   /* place-items: center;
   min-width: 320px;
@@ -75,6 +76,10 @@ button:focus-visible {
 }
 
 /* .section-container{ */
+section{
+  padding: 90px 12%;
+}
+
   .head{
       position: relative;
   }
@@ -88,6 +93,10 @@ button:focus-visible {
       left: 0;
       bottom: 0;
   }
+
+.relative{
+  position: relative;
+}
 /* } */
 .skill{
   outline: 2px solid #b3ddf1;
@@ -103,4 +112,19 @@ button:focus-visible {
     color: white;
   }
 
+}
+
+/* Break points for responsive app*/
+@media(max-width:991px){
+  header,section,footer{
+    padding-left: 3%;
+    padding-right: 3%;
+}
+@media (max-width: 530px) {
+
+  section {
+    padding: 50px 3%;
+  }
+  
+}
 }

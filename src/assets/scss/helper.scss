@@ -128,7 +128,7 @@ $sizes: (
       flex-wrap: wrap;
     }
 }
-.j{
+.justify{
   &-between{
     justify-content: space-between;
   }
@@ -178,6 +178,9 @@ $sizes: (
     }
     &-2{
       row-gap: 2rem;
+    }
+    &-3{
+      row-gap: 3rem;
     }
   }
   &-y{

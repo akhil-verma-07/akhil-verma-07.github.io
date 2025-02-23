@@ -1,9 +1,15 @@
 
 const Block = ({title,children}:any) => {
   return (
-    <section className="py-16 px-32">
+    <section className="py-24">
+      <div className="flex justify-center relative">
         <p className='fs-32 fw-5 head'>{title}</p>
-        {children}
+      </div>
+      <div className="py-16 flex flex-col">
+      {children}
+      </div>
+       
+        
     </section>
   )
 }

@@ -1,0 +1,50 @@
+.skill-card {
+    width: 120px;
+    border-radius: 8px;
+    height: 120px;
+    perspective: 1000px; /* Creates 3D depth */
+  }
+  
+  .card-inner {
+    
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+  }
+  
+  .skill-card:hover .card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .card-front,
+  .card-back {
+    width: 100%;
+    border-radius: 8px;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden; /* Hide back face by default */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .card-front {
+    // background: white;
+    background: linear-gradient(19deg,#e5eef7 0%,#fff 100%);
+    img{
+        width: 90%;
+        height: 60px;
+        object-fit: contain;
+    }
+  }
+  
+  .card-back {
+    background: linear-gradient(180deg, rgba(247, 1, 120, 1) 0%, rgba(160, 8, 156, 1) 51%, rgba(99, 13, 178, 1) 100%);
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    transform: rotateY(180deg);
+  }
+  

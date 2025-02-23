@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import './Profile.scss';
+import { Container } from '@mui/material';
+import hero from '../../../assets/images/hero.jpg';
 
 const words = ["Developer", "Freelancer"];
 
@@ -50,11 +52,15 @@ const Profile = () => {
       
   return (
     <section className='hero'>
-        <img src="https://bootstrapmade.com/content/demo/iPortfolio/assets/img/hero-bg.jpg"/>
-        <div className='name-container'>
-          <p className='fs-64 fw-6'>Akhil Verma</p>
-          <p className='fs-26'>I am <span><TypingEffect words={words}/></span></p>
-        </div>
+        <img src={hero}/>
+        <Container className='name-container' sx={{position:'relative'}}>
+          <div >
+            <p className='fs-30'>Hello, I'm</p>
+            <p className='fs-64 fw-6'>Akhil Verma</p>
+            <p className='fs-40'>a <span className='fw-6'><TypingEffect words={words}/></span></p>
+          </div>
+        </Container>
+        
     </section>
   )
 }
