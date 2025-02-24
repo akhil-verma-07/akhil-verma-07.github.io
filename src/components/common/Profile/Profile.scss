@@ -30,3 +30,31 @@
     margin: 0;
   }
 }
+
+@media (max-width: 1024px) { // Tablets
+  .hero {
+    min-height: 60vh; // Reduce height slightly for tablets
+  }
+
+  .name-container {
+    padding: 1rem;
+  }
+
+  .fs-30 { font-size: 24px; }
+  .fs-64 { font-size: 48px; }
+  .fs-40 { font-size: 32px; }
+}
+
+@media (max-width: 768px) { // Mobile screens
+  .hero {
+    min-height: 40vh; // Adjust for mobile screens
+  }
+
+  .fs-30 { font-size: 20px; }
+  .fs-64 { font-size: 36px; }
+  .fs-40 { font-size: 28px; }
+
+  .name-container {
+    padding: 0 1.5rem;
+  }
+}

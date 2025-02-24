@@ -1,3 +1,130 @@
+// $sizes: (
+//   0: 0,
+//   1: 0.125rem,  /* 2px */
+//   2: 0.25rem,   /* 4px */
+//   3: 0.375rem,  /* 6px */
+//   4: 0.5rem,    /* 8px */
+//   5: 0.625rem,  /* 10px */
+//   6: 0.75rem,   /* 12px */
+//   7: 0.875rem,  /* 14px */
+//   8: 1rem,      /* 16px */
+//   9: 1.125rem,  /* 18px */
+//   10: 1.25rem,  /* 20px */
+//   11: 1.375rem, /* 22px */
+//   12: 1.5rem,   /* 24px */
+//   13: 1.625rem, /* 26px */
+//   14: 1.75rem,  /* 28px */
+//   15: 1.875rem, /* 30px */
+//   16: 2rem,     /* 32px */
+//   17: 2.125rem, /* 34px */
+//   18: 2.25rem,  /* 36px */
+//   19: 2.375rem, /* 38px */
+//   20: 2.5rem,    /* 40px */
+//   21: 2.625rem, /* 42px */
+//   22: 2.75rem,  /* 44px */
+//   23: 2.875rem, /* 46px */
+//   24: 3rem,     /* 48px */
+//   25: 3.125rem, /* 50px */
+//   26: 3.25rem,  /* 52px */
+//   27: 3.375rem, /* 54px */
+//   28: 3.5rem,   /* 56px */
+//   29: 3.625rem, /* 58px */
+//   30: 3.75rem,  /* 60px */
+//   31: 3.875rem, /* 62px */
+//   32: 4rem,     /* 64px */
+//   33: 4.125rem, /* 66px */
+//   34: 4.25rem,  /* 68px */
+//   35: 4.375rem, /* 70px */
+//   36: 4.5rem,   /* 72px */
+//   37: 4.625rem, /* 74px */
+//   38: 4.75rem,  /* 76px */
+//   39: 4.875rem, /* 78px */
+//   40: 5rem,     /* 80px */
+//   41: 5.125rem, /* 82px */
+//   42: 5.25rem,  /* 84px */
+//   43: 5.375rem, /* 86px */
+//   44: 5.5rem,   /* 88px */
+//   45: 5.625rem, /* 90px */
+//   46: 5.75rem,  /* 92px */
+//   47: 5.875rem, /* 94px */
+//   48: 6rem,     /* 96px */
+//   49: 6.125rem, /* 98px */
+//   50: 6.25rem  /* 100px */
+// );
+
+// .p {
+//   @each $key, $value in $sizes {
+//       &-#{$key} {
+//         padding: $value!important;
+//       }
+
+//       &x-#{$key} {
+//         padding-left: $value;
+//         padding-right: $value;
+//       }
+
+//       &y-#{$key} {
+//         padding-top: $value;
+//         padding-bottom: $value;
+//       }
+
+//       &t-#{$key} {
+//         padding-top: $value;
+//       }
+//       &r-#{$key} {
+//         padding-right: $value;
+//       }
+
+//       &b-#{$key} {
+//         padding-bottom: $value;
+//       }
+//     }
+// }
+
+// .m{
+//   @each $key, $value in $sizes{
+//     &-#{$key} {
+//       margin: $value;
+//     }
+    
+//     &l-#{$key} {  // Corrected here
+//       margin-left: $value;
+//     }
+
+//     &r-#{$key} {  // Corrected here
+//       margin-right: $value;
+//     }
+
+//     &x-#{$key} {
+//       margin-left: $value;
+//       margin-right: $value;
+//     }
+
+//     &y-#{$key} {
+//       margin-top: $value;
+//       margin-bottom: $value;
+//     }
+
+//     &t-#{$key} {
+//       margin-top: $value;
+//     }
+
+//     &b-#{$key} {
+//       margin-bottom: $value;
+//     }
+//   }
+// }
+
+// Define breakpoints
+$breakpoints: (
+  xs: 0,       // Mobile (default)
+  sm: 576px,   // Small screens
+  md: 768px,   // Tablets
+  lg: 992px,   // Laptops
+  xl: 1200px   // Large desktops
+);
+
+// Define sizes
 $sizes: (
   0: 0,
   1: 0.125rem,  /* 2px */
@@ -10,110 +137,92 @@ $sizes: (
   8: 1rem,      /* 16px */
   9: 1.125rem,  /* 18px */
   10: 1.25rem,  /* 20px */
-  11: 1.375rem, /* 22px */
   12: 1.5rem,   /* 24px */
-  13: 1.625rem, /* 26px */
   14: 1.75rem,  /* 28px */
-  15: 1.875rem, /* 30px */
   16: 2rem,     /* 32px */
-  17: 2.125rem, /* 34px */
-  18: 2.25rem,  /* 36px */
-  19: 2.375rem, /* 38px */
-  20: 2.5rem,    /* 40px */
-  21: 2.625rem, /* 42px */
-  22: 2.75rem,  /* 44px */
-  23: 2.875rem, /* 46px */
+  20: 2.5rem,   /* 40px */
   24: 3rem,     /* 48px */
-  25: 3.125rem, /* 50px */
-  26: 3.25rem,  /* 52px */
-  27: 3.375rem, /* 54px */
-  28: 3.5rem,   /* 56px */
-  29: 3.625rem, /* 58px */
   30: 3.75rem,  /* 60px */
-  31: 3.875rem, /* 62px */
-  32: 4rem,     /* 64px */
-  33: 4.125rem, /* 66px */
-  34: 4.25rem,  /* 68px */
-  35: 4.375rem, /* 70px */
-  36: 4.5rem,   /* 72px */
-  37: 4.625rem, /* 74px */
-  38: 4.75rem,  /* 76px */
-  39: 4.875rem, /* 78px */
   40: 5rem,     /* 80px */
-  41: 5.125rem, /* 82px */
-  42: 5.25rem,  /* 84px */
-  43: 5.375rem, /* 86px */
-  44: 5.5rem,   /* 88px */
-  45: 5.625rem, /* 90px */
-  46: 5.75rem,  /* 92px */
-  47: 5.875rem, /* 94px */
-  48: 6rem,     /* 96px */
-  49: 6.125rem, /* 98px */
-  50: 6.25rem  /* 100px */
+  50: 6.25rem   /* 100px */
 );
 
-.p {
-  @each $key, $value in $sizes {
-      &-#{$key} {
-        padding: $value!important;
+// Generate padding and margin classes with responsive variants
+@mixin generate-spacing($property, $class) {
+  .#{$class} {
+    @each $size, $value in $sizes {
+      &-#{$size} {
+        #{$property}: $value !important;
       }
 
-      &x-#{$key} {
-        padding-left: $value;
-        padding-right: $value;
+      &x-#{$size} {
+        #{$property}-left: $value !important;
+        #{$property}-right: $value !important;
       }
 
-      &y-#{$key} {
-        padding-top: $value;
-        padding-bottom: $value;
+      &y-#{$size} {
+        #{$property}-top: $value !important;
+        #{$property}-bottom: $value !important;
       }
 
-      &t-#{$key} {
-        padding-top: $value;
-      }
-      &r-#{$key} {
-        padding-right: $value;
+      &t-#{$size} {
+        #{$property}-top: $value !important;
       }
 
-      &b-#{$key} {
-        padding-bottom: $value;
+      &r-#{$size} {
+        #{$property}-right: $value !important;
       }
-    }
-}
 
-.m{
-  @each $key, $value in $sizes{
-    &-#{$key} {
-      margin: $value;
-    }
-    
-    &l-#{$key} {  // Corrected here
-      margin-left: $value;
-    }
+      &b-#{$size} {
+        #{$property}-bottom: $value !important;
+      }
 
-    &r-#{$key} {  // Corrected here
-      margin-right: $value;
-    }
+      &l-#{$size} {
+        #{$property}-left: $value !important;
+      }
 
-    &x-#{$key} {
-      margin-left: $value;
-      margin-right: $value;
-    }
+      // Generate responsive variants
+      @each $bp, $bp-value in $breakpoints {
+        @media (min-width: $bp-value) {
+          &-#{$bp}-#{$size} {
+            #{$property}: $value !important;
+          }
 
-    &y-#{$key} {
-      margin-top: $value;
-      margin-bottom: $value;
-    }
+          &x-#{$bp}-#{$size} {
+            #{$property}-left: $value !important;
+            #{$property}-right: $value !important;
+          }
 
-    &t-#{$key} {
-      margin-top: $value;
-    }
+          &y-#{$bp}-#{$size} {
+            #{$property}-top: $value !important;
+            #{$property}-bottom: $value !important;
+          }
 
-    &b-#{$key} {
-      margin-bottom: $value;
+          &t-#{$bp}-#{$size} {
+            #{$property}-top: $value !important;
+          }
+
+          &r-#{$bp}-#{$size} {
+            #{$property}-right: $value !important;
+          }
+
+          &b-#{$bp}-#{$size} {
+            #{$property}-bottom: $value !important;
+          }
+
+          &l-#{$bp}-#{$size} {
+            #{$property}-left: $value !important;
+          }
+        }
+      }
     }
   }
 }
+
+// Apply mixins for padding and margin
+@include generate-spacing("padding", "p");
+@include generate-spacing("margin", "m");
+
 
 .flex {
     display: flex;

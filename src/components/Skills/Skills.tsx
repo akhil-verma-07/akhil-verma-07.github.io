@@ -31,7 +31,7 @@ const Skills = () => {
   return (
     <div className="bg-light">
         <Block title="Skills">
-        <div className="mb-16 flex justify-center">
+        <div className="mb-16 flex justify-center text-center">
             <p>Demonstrating my expertise in web development through dynamic visual metrics, emphasizing continuous learning and improvement in each technology.</p>
         </div>
        
@@ -53,10 +53,6 @@ const Skills = () => {
         </div>
         </Block>
     </div>
-    // <section className="section-container py-16 px-32 bg-light">
-    //     <p className='fs-32 fw-5 head'>Skills</p>
-        
-    // </section>
   )
 }
 
