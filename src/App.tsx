@@ -7,7 +7,6 @@ import Profile from './components/common/Profile/Profile'
 import About from './components/About/About'
 import Skills from './components/Skills/Skills'
 import Experience from './components/Experience/Experience'
-import GetInTouch from './components/GetInTouch/GetInTouch'
 import SEO from './components/SEO'
 
 function App() {
@@ -37,7 +36,7 @@ function App() {
         <About/>
         <Skills/>
         <Experience/>
-        <GetInTouch/>
+        {/* <GetInTouch/> */}
       </main>
       {/* <Router/> */}
     </>

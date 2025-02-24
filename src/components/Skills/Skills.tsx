@@ -41,7 +41,7 @@ const Skills = () => {
                     <div className="card-inner">
                       
                       <div className="card-front">
-                        <img width={100} src={skill.icon} alt={skill.name} />
+                        <img  src={skill.icon} alt={skill.name} />
                       </div>
                   
                       <div className="card-back">
