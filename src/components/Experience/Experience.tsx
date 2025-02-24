@@ -33,8 +33,8 @@ const Experience = () => {
         ]
         }]
   return (
-    <Block title="Professional Experience">
-        <div className="py-16 px-48">
+    <Block title="Experience">
+        <div className="py-16  px-sm-8 px-xs-8 px-md-48 px-lg-48">
             {
                 exp.map((item,i)=>(
                     <div className={`${i==exp.length-1 ? 'pb-2':'pb-10'}  px-10 exp-item `} key={item.start + item.end}>

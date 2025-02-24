@@ -1,9 +1,23 @@
 import { useEffect, useState } from 'react';
 import './Profile.scss';
-import { Container } from '@mui/material';
+import { Container, IconButton } from '@mui/material';
 import hero from '../../../assets/images/hero.jpg';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import GitHubIcon from '@mui/icons-material/GitHub';
 
 const words = ["Developer", "Freelancer"];
+const connectIcons =[
+  {
+    name: "LinkedIn",
+    icon: <LinkedInIcon fontSize='medium'/>,
+    url: "https://www.linkedin.com/in/akhil-verma-a935b4a0/"
+  },
+  {
+    name:"Github",
+    icon: <GitHubIcon fontSize='medium'/>,
+    url: "https://github.com/akhil-verma-07"
+  }
+]
 
 const TypingEffect = ({ words, typingSpeed = 150, deleteSpeed = 100, delay = 1000 }:any) => {
   const [wordIndex, setWordIndex] = useState(0);
@@ -11,6 +25,7 @@ const TypingEffect = ({ words, typingSpeed = 150, deleteSpeed = 100, delay = 100
   const [isDeleting, setIsDeleting] = useState(false);
   const [showCursor, setShowCursor] = useState(true);
 
+  
   useEffect(() => {
     const currentWord = words[wordIndex];
     let timer:any;
@@ -58,6 +73,13 @@ const Profile = () => {
             <p className='fs-30'>Hello, I'm</p>
             <p className='fs-64 fw-6'>Akhil Verma</p>
             <p className='fs-40'>a <span className='fw-6'><TypingEffect words={words}/></span></p>
+          </div>
+          <div className='flex flex-row gap-2 mt-16'>
+            {
+              connectIcons.map((c)=>(
+                <div className='connect'><IconButton color='inherit' href={c.url}>{c.icon}</IconButton></div>
+              ))
+            }
           </div>
         </Container>
         

@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 
 const SEO = () => {
-    const title="Home | Akhil Verma - Software Developer";
+    const title="Akhil Verma - Software Developer | Home";
     const description="I'm Akhil Verma, a frontend developer specializing in React, Angular, and modern web technologies. Explore my projects and skills here!";
     const keywords="react developer,MEAN & MERN developer, frontend developer, portfolio, javascript, angular, typescript";
     useEffect(() => {

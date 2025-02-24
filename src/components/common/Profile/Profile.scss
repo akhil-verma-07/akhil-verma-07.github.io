@@ -30,6 +30,25 @@
     margin: 0;
   }
 }
+.connect{
+  padding: 4px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease-in-out; // Smooth transition
+  cursor: pointer;
+  color: #fff;
+  a:hover{
+    color: inherit!important;
+  }
+  &:hover {
+    transform: scale(1.3);
+  }
+}
 
 @media (max-width: 1024px) { // Tablets
   .hero {
