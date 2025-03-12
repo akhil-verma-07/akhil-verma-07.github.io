@@ -1,0 +1,55 @@
+.three {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+  .three.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+.three span {
+    color: #b10e81;
+    opacity: 0;
+    transform: translate(-300px, 0) scale(0);
+    animation: sideSlide 0.8s forwards;
+  }
+  
+  @keyframes sideSlide {
+    60% {
+      transform: translate(20px, 0) scale(1);
+      color: #b10e81;
+    }
+  
+    80% {
+      transform: translate(20px, 0) scale(1);
+      color: #b10e81;
+    }
+  
+    99% {
+      transform: translate(0) scale(1.2);
+      color: #00f0ff;
+    }
+  
+    100% {
+      transform: translate(0) scale(1);
+      opacity: 1;
+      color: #b10e81;
+    }
+  }
+  
+  .animate {
+    font-size: 38px;
+    font-weight: 500;
+  }
+  
+  .animate span {
+    display: inline-block;
+  }
+  
+  @for $i from 1 through 20 {
+    .animate span:nth-of-type(#{$i}) {
+      animation-delay: #{$i * 0.05}s;
+    }
+  }

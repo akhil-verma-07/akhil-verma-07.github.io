@@ -2,6 +2,7 @@
     width: 120px;
     border-radius: 8px;
     height: 120px;
+
     perspective: 1000px; /* Creates 3D depth */
     @media (max-width: 992px) { // Medium screens (tablets)
         width: 100px;
@@ -42,6 +43,7 @@
     align-items: center;
     justify-content: center;
     text-align: center;
+    
   }
   
   .card-front {
@@ -49,9 +51,15 @@
     background: linear-gradient(19deg,#e5eef7 0%,#fff 100%);
     img{
         width: 90%;
+        padding: 4px;
         height: 60px;
         object-fit: contain;
+        @media (max-width: 768px) { // Small screens (mobile landscape)
+          // font-size: 12px;
+          padding:4px;
+         }
     }
+    
   }
   
   .card-back {
@@ -60,6 +68,13 @@
     font-size: 18px;
     font-weight: 600;
     transform: rotateY(180deg);
+    
+  
+    @media (max-width: 768px) { // Small screens (mobile landscape)
+     font-size: 12px;
+    //  padding:4px;
+    }
+  
   }
   
 

@@ -10,11 +10,19 @@
     width: 40%;
     display: flex;
     justify-content: center;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: all 2s cubic-bezier(0.5, 0, 0, 1) 0.2s;
 }
 .profile-content {
     width: 60%;
     max-width: 600px;
     padding: 16px;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: all 2s cubic-bezier(0.5, 0, 0, 1) 0.2s;
 }
 
 /* Responsive Design */
@@ -32,6 +40,15 @@
     .profile-content {
       width: 90%;
       padding: 12px;
+
+    }
+
+    .profile-container, .profile-content {
+      transform: translateY(50px);
+    }
+  
+    .profile-container.visible-left, .profile-content.visible-right {
+      transform: translateY(0);
     }
   }
 
@@ -45,4 +62,27 @@
       width: 100%;
       padding: 10px;
     }
+  }
+
+  
+  /* Left div animation (Slides in from left) */
+  .profile-container {
+    transform: translateX(-100px);
+  }
+  
+  .profile-container.visible-left {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+  }
+  
+  /* Right div animation (Slides in from right) */
+  .profile-content {
+    transform: translateX(100px);
+  }
+  
+  .profile-content.visible-right {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
   }

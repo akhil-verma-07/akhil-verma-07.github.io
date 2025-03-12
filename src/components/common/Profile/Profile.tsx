@@ -5,7 +5,7 @@ import hero from '../../../assets/images/hero.jpg';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 
-const words = ["Developer", "Freelancer"];
+const words = ["Web Developer", "Full Stack Developer"];
 const connectIcons =[
   {
     name: "LinkedIn",
@@ -77,7 +77,7 @@ const Profile = () => {
           <div className='flex flex-row gap-2 mt-16'>
             {
               connectIcons.map((c)=>(
-                <div className='connect'><IconButton color='inherit' href={c.url}>{c.icon}</IconButton></div>
+                <div key={c.name} className='connect'><IconButton color='inherit' href={c.url}>{c.icon}</IconButton></div>
               ))
             }
           </div>

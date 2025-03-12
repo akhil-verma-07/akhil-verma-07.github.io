@@ -306,7 +306,10 @@ $sizes: (
     background: #fff;
   }
   &-light{
-    background: #f4fafd;
+    background: linear-gradient(98deg, #e5eef7 0%, #fff 100%);;
+  }
+  &-light-2{
+    background: linear-gradient(98deg, #e5eef7 100%, #fff 0%);;
   }
 }
 .gap{

@@ -24,7 +24,7 @@ const mySkills:Skill[] = [
     { name: "MongoDB", icon: "https://svgl.app/library/mongodb.svg", score: 7 },
     { name: "TypeScript", icon: "https://svgl.app/library/typescript.svg", score: 9 },
     { name: "Git", icon: "https://svgl.app/library/git.svg", score: 8 },
-    { name: "Git", icon: "https://svgl.app/library/strapi.svg", score: 4 }
+    { name: "Strapi", icon: "https://svgl.app/library/strapi.svg", score: 4 }
   ]
 
 const Skills = () => {
