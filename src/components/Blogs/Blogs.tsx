@@ -2,7 +2,9 @@ import Block from "../common/block/Block"
 import ssrimg  from "../../assets/images/ssr_blog.jpg";
 import "./Blogs.scss"
 import { Button } from "@mui/material";
+
 import closureimg from "../../assets/images/closure.jpeg"
+import r19 from '../../assets/images/react-19.jpeg';
 const blogs = [{
     id:1,
     title:"The Power of Server-Side Rendering (SSR) in React Projects",
@@ -15,6 +17,12 @@ const blogs = [{
     description:"In the vast landscape of JavaScript, there lies a fundamental concept that often perplexes developers, yet holds immense power in shaping the way we...",
     image:closureimg,
     redirection:"https://www.linkedin.com/pulse/exploring-closures-javascript-fundamental-concept-every-akhil-verma-95w8c/?trackingId=z5Cuchh9StG51J7aNlTF0w%3D%3D"
+},{
+    id:3,
+    title:"React 19: Exciting New Features You Need to Know",
+    description:"React 19 is a game-changer with : Auto optimizing compiler, Stable server components, Action API, Smarter assets loading, useOptimistice hook and ...",
+    image:r19,
+    redirection: "https://www.linkedin.com/posts/akhil-verma-a935b4a0_summary-react-19-key-highlights-activity-7312749068235993089-k0S1?utm_source=share&utm_medium=member_android&rcm=ACoAABVyGA8BhkNcVWIap4JSRi-Exx2ruPFjzM4"
 }]
 
 const Blogs = () => {

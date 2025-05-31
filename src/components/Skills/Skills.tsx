@@ -2,6 +2,7 @@ import { Skill } from "../../interfaces/interfaces"
 import Block from "../common/block/Block"
 import './Skills.scss';
 import ssr from "../../assets/images/ssr.png";
+import { useEffect, useRef, useState } from "react";
 
 
 const mySkills:Skill[] = [
@@ -28,9 +29,28 @@ const mySkills:Skill[] = [
   ]
 
 const Skills = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect(); // Unobserve after animation triggers
+        }
+      },
+      { threshold: 0.3 } // Trigger when 30% of the section is visible
+    );
+
+    if (sectionRef.current) observer.observe(sectionRef.current);
+
+    return () => observer.disconnect();
+  }, []);
+  
   return (
-    <div className="bg-light">
-        <Block title="Skills">
+    <div ref={sectionRef} className={`bg-light skills-section ${isVisible ? "visible" : ""}`}>
+        <Block title="Skills" >
         <div className="mb-16 flex justify-center text-center">
             <p>Demonstrating my expertise in web development through dynamic visual metrics, emphasizing continuous learning and improvement in each technology.</p>
         </div>
