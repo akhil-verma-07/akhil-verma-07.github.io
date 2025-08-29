@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom"
+import Block from "../components/common/block/Block"
+import {  Card, Grid2 } from "@mui/material"
 
 const Projects = () => {
 
@@ -8,20 +10,18 @@ const Projects = () => {
     url: "/json-diff"
   }]
   return (
-    <div>
-      <h4>Projects</h4>
-      <div>
-        
+    <Block title="Projects">
+      <Grid2 container >
         {
           projects.map((project:any)=>{
-            return <div key={project.url}>
-                <h5>{project.title}</h5>
-                <Link to={"/projects"+project.url}> Demo</Link>
-              </div>
+            return <Grid2 size={{sm:12,md:6,lg:4}} key={project.url}>
+                <Card className="p-8 shadow"><h2>{project.title}</h2>
+                <Link to={"/projects"+project.url}> Demo</Link></Card>
+              </Grid2>
           })
         }
-      </div>
-    </div>
+      </Grid2>
+    </Block>
   )
 }
 

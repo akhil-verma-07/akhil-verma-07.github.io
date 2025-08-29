@@ -1,5 +1,6 @@
-import { Button, Container, TextField } from "@mui/material"
+import { Button, TextField } from "@mui/material"
 import { useState } from "react";
+import Block from "../common/block/Block";
 
 
 function compareJson(obj1:any, obj2:any, path = "") {
@@ -72,22 +73,26 @@ const JsonDiff = () => {
   const [old,setOld] = useState("");
   const [newJson,setNewJson] = useState("");
   const [diff,setDiff]= useState(null as any);
+  const [compared,setCompared] = useState(false);
 
   const onChangeOld = (event:React.ChangeEvent<HTMLInputElement>)=>{
     setOld(event.target.value);
     setDiff(null);
+    setCompared(false);
   }
   const onChangeNew = (event:React.ChangeEvent<HTMLInputElement>)=>{
     setNewJson(event.target.value);
     setDiff(null);
+    setCompared(false)
   }
   const findDiff = ()=>{
     setDiff(compareJson(JSON.parse(old),JSON.parse(newJson)));
+    setCompared(true)
   }
   console.log(diff)
   return (
-    <Container className="bg-primary">
-        <h3>Json Diff Checker</h3>
+    <Block className="bg-primary" title={"JSON Diff Checker"}>
+        
         <p>It compares two json objects and show the difference between them</p>
 
         <div className="flex flex-row w-100 my-16 gap-3">
@@ -99,20 +104,24 @@ const JsonDiff = () => {
             </div>
         </div>
         <Button variant="contained" onClick={findDiff}>Compare</Button>
-        {diff && Object.keys(diff).length>0 && <div>
-          <h4>Difference</h4>
+        {diff && Object.keys(diff).length>0 && <div className="my-8"> 
+          <h4 className="my-4">Difference</h4>
           <div style={{ display: 'flex', gap: '32px' }}>
-          <div>
+          <div className="w-50 shadow p-8">
             <h3>Original JSON</h3>
             {renderJson(JSON.parse(old), diff, 'left')}
           </div>
-          <div>
+          <div className="w-50 shadow p-8">
             <h3>Modified JSON</h3>
             {renderJson(JSON.parse(newJson), diff, 'right')}
           </div>
         </div>
         </div>}
-    </Container>
+
+        {
+          (compared && !diff && !Object.keys(diff).length ) && <p>Both JSON is identical</p>
+        }
+    </Block>
   )
 }
 
