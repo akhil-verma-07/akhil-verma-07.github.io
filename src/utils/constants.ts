@@ -1,3 +1,5 @@
 export const ROUTE ={
-    HOME:'/'
+    HOME:'/',
+    PROJECTS: '/projects',
+    JSON_DIFF: '/projects/json-diff'
 }

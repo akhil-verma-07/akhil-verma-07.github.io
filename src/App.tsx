@@ -3,13 +3,14 @@
 import './App.scss'
 // import { useState } from 'react'
 // import Router from './components/Router/Router'
-import Profile from './components/common/Profile/Profile'
-import About from './components/About/About'
-import Skills from './components/Skills/Skills'
-import Experience from './components/Experience/Experience'
+// import Profile from './components/common/Profile/Profile'
+// import About from './components/About/About'
+// import Skills from './components/Skills/Skills'
+// import Experience from './components/Experience/Experience'
 import SEO from './components/SEO'
-import Blogs from './components/Blogs/Blogs'
+// import Blogs from './components/Blogs/Blogs'
 import Footer from './components/Footer/Footer'
+import CustomRouter from './components/CustomRouter/CustomRouter'
 
 function App() {
   // const [tab,setTab] = useState()
@@ -34,12 +35,7 @@ function App() {
 
       </header> */}
       <main>
-        <Profile/>
-        <About/>
-        <Skills/>
-        <Experience/>
-        <Blogs/>
-        {/* <GetInTouch/> */}
+        <CustomRouter/>
       </main>
       <Footer/>
       {/* <Router/> */}
