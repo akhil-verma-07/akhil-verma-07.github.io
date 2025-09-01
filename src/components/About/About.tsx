@@ -37,7 +37,7 @@ const About = () => {
              
             </div>
             <div className={`profile-content ${hasAnimated ? "visible-right" : ""}`}>
-              <h2>5+ Years Experience in Web Development</h2>
+              <h2>6+ Years Experience in Web Development</h2>
               <p className='py-8 text-justify'>Creative Frontend Developer with a passion for crafting interactive, 
                 responsive, and user-friendly web experiences. Skilled in React, JavaScript, and modern UI/UX principles, 
                 I transform ideas into seamless digital solutions. Constantly learning, improving, and building innovative web applications.
