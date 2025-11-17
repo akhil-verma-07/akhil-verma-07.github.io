@@ -1,6 +1,6 @@
 import Block from '../common/block/Block';
 import './About.scss';
-import dp from '../../assets/images/dp.jpg'
+import dp from '../../assets/images/Akhil.webp'
 import PlaceIcon from '@mui/icons-material/Place';
 import ContactPhoneIcon from '@mui/icons-material/ContactPhone';
 import EmailIcon from '@mui/icons-material/Email';
@@ -33,7 +33,8 @@ const About = () => {
         <div ref={sectionRef} className='flex flex-wrap flex-row justify-center '>
           
             <div className={`profile-container ${hasAnimated ? "visible-left" : ""}`}>
-              <img className="profile text-center" src={dp} alt="Akhil Verma" />
+            <img className='profile text-center' width={'100%'} style={{borderRadius:'50%'}} loading='lazy' src={dp} alt="Akhil Verma" />
+
              
             </div>
             <div className={`profile-content ${hasAnimated ? "visible-right" : ""}`}>

@@ -2,19 +2,33 @@ import Block from "../common/block/Block";
 import './Experience.scss'
 
 const Experience = () => {
-    const exp = [{
-        title:"Senior Software Developer",
-        start: "2023",
-        end: "2024",
-        company: "Hughes Systique, Gurugram, Haryana",
-        responsibilities:[
-            "Developed and optimized enterprise-level applications for Yatra Online Limited, focusing on flights, hotels, cabs, and trip management systems within a corporate environment.",
-            "Led the migration of legacy applications from AngularJS to React 18, enhancing performance, scalability, and maintainability while reducing technical debt.",
-            "Designed and implemented reusable UI components, standardizing development practices and improving efficiency across multiple projects.",
-            "Integrated Server-Side Rendering (SSR) in React applications, significantly improving SEO performance, page load speeds, and user experience.",
-            "Redesigned and restructured project architecture, aligning with modern best practices to improve code organization, maintainability, and team collaboration.",
-            "Developed dynamic, config-driven, and backend-driven user interfaces, enabling real-time content management and customization tailored to business requirements."
-        ]
+    const exp = [
+        {
+            title:"Senior Software Developer",
+            start: "2024",
+            end: "Current",
+            company: "Yatra Online Limited, Gurugram, Haryana",
+            responsibilities:[
+                "Built and optimized user-friendly interfaces for Yatra’s online booking platform, enhancing UX and boosting conversion.",
+                "Improved application performance by 70% through code refactoring, efficient API integration, and optimized frontend architecture.",
+                "Modernized legacy systems by migrating to React + Redux Toolkit and Angular, reducing technical debt and improving scalability.",
+                "Partnered with backend and design teams to ensure smooth API integration and streamlined data flow.",
+                "Mentored junior team members, fostering skill development and promoting collaborative problem-solving.",
+                "Implemented SEO and accessibility best practices, improving search rankings and page performance."
+            ]
+        },
+        {
+            title:"Senior Software Developer",
+            start: "2023",
+            end: "2024",
+            company: "Hughes Systique, Gurugram, Haryana",
+            responsibilities:[
+                "Migrated and modernized legacy applications to Angular 17 and contemporary frameworks, improving maintainability, scalability, and long-term system reliability.",
+                "Designed and implemented a dynamic API-driven form generation system using Angular + Formly, enabling flexible configurations and reducing development effort",
+                "Delivered multi-language (i18n) support, ensuring seamless localization and accessibility for global user bases.",
+                "Optimized frontend performance and state management with React, Redux, and Angular, achieving faster load times and smoother user interactions.",
+                "Partnered with client stakeholders and cross-functional teams to troubleshoot critical production issues, delivering stable, high-quality solutions under tight deadlines.",
+            ]
         },
         {
         title:"Software Developer",

@@ -51,7 +51,7 @@ function renderJson(obj:any, diffs:any, side:any,path:string="") {
   
   return (
     <ul style={{listStyle:"none"}}>
-      {"{"}
+      {Array.isArray(obj) ? "[":"{"}
       {Object.entries(obj).map(([key, value], i) => {
         let pa = path ? `${path}.${key}` : key
         const diffType = getDiffType(diffs, key, side,path); // 'added', 'removed', 'changed', or 'normal'
@@ -64,7 +64,7 @@ function renderJson(obj:any, diffs:any, side:any,path:string="") {
           </li>
         );
       })}
-      {"}"}
+       {Array.isArray(obj) ? "]":"}"}
     </ul>
   );
 }
@@ -74,6 +74,7 @@ const JsonDiff = () => {
   const [newJson,setNewJson] = useState("");
   const [diff,setDiff]= useState(null as any);
   const [compared,setCompared] = useState(false);
+  const [msg,setMsg]=useState("");
 
   const onChangeOld = (event:React.ChangeEvent<HTMLInputElement>)=>{
     setOld(event.target.value);
@@ -86,10 +87,15 @@ const JsonDiff = () => {
     setCompared(false)
   }
   const findDiff = ()=>{
-    setDiff(compareJson(JSON.parse(old),JSON.parse(newJson)));
-    setCompared(true)
+    try{
+      setDiff(compareJson(JSON.parse(old),JSON.parse(newJson)));
+      setCompared(true);
+      setMsg("")
+    }catch(e){
+      setMsg("Entered JSON is invalid");
+    }
+    
   }
-  console.log(diff)
   return (
     <Block className="bg-primary" title={"JSON Diff Checker"}>
         
@@ -104,14 +110,17 @@ const JsonDiff = () => {
             </div>
         </div>
         <Button variant="contained" onClick={findDiff}>Compare</Button>
-        {diff && Object.keys(diff).length>0 && <div className="my-8"> 
+        {
+          msg && <h3>{msg}</h3>
+        }r3 
+        {diff && compared && Object.keys(diff).length>0 && <div className="my-8"> 
           <h4 className="my-4">Difference</h4>
           <div style={{ display: 'flex', gap: '32px' }}>
-          <div className="w-50 shadow p-8">
+          <div className="w-50 shadow p-8" style={{overflow:"auto", maxHeight:"500px"}}>
             <h3>Original JSON</h3>
             {renderJson(JSON.parse(old), diff, 'left')}
           </div>
-          <div className="w-50 shadow p-8">
+          <div className="w-50 shadow p-8" style={{overflow:"auto", maxHeight:"500px"}}>
             <h3>Modified JSON</h3>
             {renderJson(JSON.parse(newJson), diff, 'right')}
           </div>
@@ -119,7 +128,7 @@ const JsonDiff = () => {
         </div>}
 
         {
-          (compared && !diff && !Object.keys(diff).length ) && <p>Both JSON is identical</p>
+          (compared && diff.length ==0 && !Object.keys(diff).length ) && <p>Both JSON is identical</p>
         }
     </Block>
   )
