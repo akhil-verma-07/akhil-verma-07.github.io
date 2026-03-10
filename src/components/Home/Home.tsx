@@ -1,21 +1,21 @@
-import About from "../About/About"
-import Blogs from "../Blogs/Blogs"
-import Profile from "../common/Profile/Profile"
-import Experience from "../Experience/Experience"
-import PList from "../PList/PList"
-import Skills from "../Skills/Skills"
+import Hero from "../sections/Hero";
+import About from "../sections/About";
+import Skills from "../sections/Skills";
+import Experience from "../sections/Experience";
+import Projects from "../sections/Projects";
+import Blogs from "../sections/Blogs";
+import Contact from "../sections/Contact";
 
-const Home = () => {
-  return (
-    <div>
-      <Profile/>
-        <About/>
-        <Skills/>
-        <Experience/>
-        <PList/>
-        <Blogs/>
-    </div>
-  )
-}
+const Home = () => (
+  <>
+    <Hero />
+    <About />
+    <Skills />
+    <Experience />
+    <Blogs />
+    <Projects />
+    <Contact />
+  </>
+);
 
-export default Home
+export default Home;
