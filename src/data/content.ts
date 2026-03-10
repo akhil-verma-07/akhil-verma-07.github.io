@@ -19,11 +19,11 @@ export const personalInfo = {
     github: "https://github.com/akhil-verma-07",
   },
   seo: {
-    title: "Akhil Verma - Software Developer | Home",
+    title: "Akhil Verma | Frontend & Full Stack Developer",
     description:
-      "I'm Akhil Verma, a frontend developer specializing in React, Angular, and modern web technologies. Explore my projects and skills here!",
+      "Frontend and Full Stack Developer with 6+ years of experience building fast, scalable, and SEO-friendly web applications using React, Angular, TypeScript, and modern frontend architecture.",
     keywords:
-      "react developer,MEAN & MERN developer, frontend developer, portfolio, javascript, angular, typescript",
+      "Akhil Verma, frontend developer, full stack developer, React developer, Angular developer, TypeScript, JavaScript, web performance, portfolio",
   },
 };
 

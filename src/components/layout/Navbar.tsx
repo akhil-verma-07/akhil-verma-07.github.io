@@ -1,11 +1,14 @@
 import { useEffect, useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useLocation, useNavigate } from "react-router-dom";
 import { navLinks, personalInfo } from "../../data/content";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -33,15 +36,34 @@ const Navbar = () => {
     return () => observer.disconnect();
   }, []);
 
+  const scrollToSection = useCallback((href: string) => {
+    const target = document.querySelector(href);
+    if (!target) return false;
+    target.scrollIntoView({ behavior: "smooth" });
+    setActiveSection(href);
+    return true;
+  }, []);
+
   const handleNavClick = useCallback(
     (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
       e.preventDefault();
       setMobileOpen(false);
-      const target = document.querySelector(href);
-      target?.scrollIntoView({ behavior: "smooth" });
+
+      if (location.pathname !== "/") {
+        navigate({ pathname: "/", hash: href });
+        return;
+      }
+
+      scrollToSection(href);
     },
-    []
+    [location.pathname, navigate, scrollToSection]
   );
+
+  useEffect(() => {
+    if (location.pathname !== "/" || !location.hash) return;
+    const timer = window.setTimeout(() => scrollToSection(location.hash), 80);
+    return () => window.clearTimeout(timer);
+  }, [location.pathname, location.hash, scrollToSection]);
 
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? "hidden" : "";
@@ -57,7 +79,19 @@ const Navbar = () => {
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       >
         <div className="navbar-inner">
-          <a href="#" className="navbar-logo" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); }}>
+          <a
+            href="/"
+            className="navbar-logo"
+            onClick={(e) => {
+              e.preventDefault();
+              setMobileOpen(false);
+              if (location.pathname !== "/") {
+                navigate("/");
+                return;
+              }
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }}
+          >
             {personalInfo.name}
           </a>
 
