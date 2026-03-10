@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { personalInfo } from "../../data/content";
 import { ease } from "../../utils/animations";
-import heroImage from "../../assets/images/hero.jpg";
 
 const useTypingEffect = (words: string[], typingSpeed = 120, deleteSpeed = 80, pause = 2000) => {
   const [text, setText] = useState("");
@@ -56,10 +55,7 @@ const Hero = () => {
 
   return (
     <section className="hero" aria-label="Introduction">
-      <div
-        className="hero-bg"
-        style={{ backgroundImage: `linear-gradient(120deg, rgba(9, 9, 11, 0.78), rgba(9, 9, 11, 0.45)), url(${heroImage})` }}
-      />
+      <div className="hero-bg" />
       <div className="hero-glow" />
 
       <motion.div
